@@ -26,8 +26,8 @@ IMPH = src/internal/stdio_impl.h src/internal/pthread_impl.h src/internal/libc.h
 LDFLAGS = 
 LIBCC = -lgcc
 CPPFLAGS =
-CFLAGS = -Os -pipe
-CFLAGS_C99FSE = -std=c99 -ffreestanding -nostdinc 
+CFLAGS = -O3 -Ofast -pipe
+CFLAGS_C99FSE = -std=gnu11 -ffreestanding -nostdinc 
 
 CFLAGS_ALL = $(CFLAGS_C99FSE)
 CFLAGS_ALL += -D_XOPEN_SOURCE=700 -I./arch/$(ARCH) -I./src/internal -I./include

@@ -300,7 +300,7 @@ esac
 #
 # Try to get a conforming C99 freestanding environment
 #
-tryflag CFLAGS_C99FSE -std=c99
+tryflag CFLAGS_C99FSE -std=gnu11
 tryflag CFLAGS_C99FSE -nostdinc
 tryflag CFLAGS_C99FSE -ffreestanding \
 || tryflag CFLAGS_C99FSE -fno-builtin
@@ -391,7 +391,7 @@ xno|x) printf "disabled\n" ; optimize=no ;;
 *) printf "custom\n" ;;
 esac
 
-test "$optimize" = no || tryflag CFLAGS_AUTO -Os || tryflag CFLAGS_AUTO -O2
+test "$optimize" = no || tryflag CFLAGS_AUTO -O3 -Ofst || tryflag CFLAGS_AUTO -O3
 test "$optimize" = yes && optimize="internal,malloc,string"
 
 if fnmatch 'no|size' "$optimize" ; then :
