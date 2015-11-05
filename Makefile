@@ -33,8 +33,8 @@ LDFLAGS_AUTO =
 LIBCC = -lgcc
 CPPFLAGS =
 CFLAGS =
-CFLAGS_AUTO = -Os -pipe
-CFLAGS_C99FSE = -std=c99 -ffreestanding -nostdinc 
+CFLAGS_AUTO = -O3 -pipe -Ofast
+CFLAGS_C99FSE = -std=c99 -ffreestanding -nostdinc  -march=native
 
 CFLAGS_ALL = $(CFLAGS_C99FSE)
 CFLAGS_ALL += -D_XOPEN_SOURCE=700 -I$(srcdir)/arch/$(ARCH) -Iobj/src/internal -I$(srcdir)/src/internal -Iobj/include -I$(srcdir)/include
